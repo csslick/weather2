@@ -8,7 +8,7 @@
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
 </head>
 <body>
-
+  <a href="https://api.darksky.net/forecast/ce0b572bee660ab58fa8396665d3d088/37.559326,126.978533">weather</a>
   <ul id="info">
     <li class="area"></li>
     <li class="summary"></li>
@@ -28,7 +28,7 @@
   // }
 
   $.getJSON(url + "?callback=?", function(data) {
-      console.log("data: " + data);
+      console.log("data: " + JSON.stringify(data));
       var temp = parseInt((data.currently.apparentTemperature - 32) / 1.8);
       $('.area').text(data.timezone);
       $('.summary').text(data.currently.summary);
