@@ -6,6 +6,7 @@ li{ list-style-type: none;}
   font-size: 3em;
 }
 #page{
+  width: 100%;
   max-width: 768px;
   height: 100vh;
   margin: 0 auto;
@@ -23,7 +24,7 @@ li{ list-style-type: none;}
   align-items: center;
 }
 #page figure .icon{
-  width: 60vw;
+  width: 60%;
   display: none;
 }
 
