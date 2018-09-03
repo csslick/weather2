@@ -61,9 +61,33 @@ function getLocation() {
     }
 }
 
+function getToday(){
+  var d = new Date(),
+      year = d.getFullYear(),
+      month = d.getMonth() + 1,
+      day = d.getDay(),
+      year = year.toString().slice(2);
+
+  switch(day){
+    case 0: var today = '일요일'; $('.day').html(today);break;
+    case 1: var today = '월요일'; $('.day').html(today);break;
+    case 2: var today = '화요일'; $('.day').html(today);break;
+    case 3: var today = '수요일'; $('.day').html(today);break;
+    case 4: var today = '목요일'; $('.day').html(today);break;
+    case 5: var today = '금요일'; $('.day').html(today);break;
+    case 6: var today = '토요일'; $('.day').html(today);break;
+    default: break;
+  }
+  (month < 12)?month = '0'+ month: month;
+  (day < 12)?day = '0'+ day: day;
+  console.log(year, month, day);  
+  $('.date').html(year + '/' + month + '/' + day);
+}
+
 $(function(){
   getLocation();  // 현재 내 지도 위치(기본값)
   getWeather();   //
+  getToday();
 
   // 위치 정보 입력
   $('#area').on('change', function(){
