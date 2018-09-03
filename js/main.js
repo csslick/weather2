@@ -61,16 +61,18 @@ function getLocation() {
     }
 }
 
-getLocation();  // 현재 내 지도 위치(기본값)
-getWeather();   //
+$(function(){
+  getLocation();  // 현재 내 지도 위치(기본값)
+  getWeather();   //
 
-// 위치 정보 입력
-$('#area').on('change', function(){
-  var i = $(this).prop('selectedIndex');
-  latlon = $(this).val();
-  new_url = url + latlon;
-  getWeather();
+  // 위치 정보 입력
+  $('#area').on('change', function(){
+    var i = $(this).prop('selectedIndex');
+    latlon = $(this).val();
+    new_url = url + latlon;
+    getWeather();
 
-  $('.area').html($(this).find('option').eq(i).text());
-  console.log($(this).find('option').eq(i).text());
-});
+    $('.area').html($(this).find('option').eq(i).text());
+    console.log($(this).find('option').eq(i).text());
+  });
+})
